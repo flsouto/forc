@@ -19,6 +19,10 @@ This will match any files that have the keywords "controller" and "post" in its 
 
 The `o` command works just like `f` but will attempt to open the file using nano.
 
+```
+o controller post
+```
+
 If more than one match is returned, it will not open anything and instead just show a list of files like `f` does.
 
 It's up to you to improve the search criteria so that only one match is returned.
