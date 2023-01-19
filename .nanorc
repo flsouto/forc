@@ -1,0 +1,7 @@
+set tabstospaces
+set tabsize 4
+set multibuffer
+set linenumbers
+set nohelp
+set autoindent
+bind ^Z suspend main

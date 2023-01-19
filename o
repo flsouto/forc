@@ -1,0 +1,8 @@
+[[ -z $1 ]] && { echo "missing arg"; exit; }
+found=$(f $@)
+[[ -z $found ]] && { echo "nothing found"; exit; }
+count=$(echo "$found" | wc -l)
+if [[ $count -gt 1 ]]; 
+    then echo "$found"
+    else nano "$found"
+fi
