@@ -1,7 +1,15 @@
-[[ -z $2 ]] && { echo "missing args"; exit; }
+[[ -z $1 ]] && { echo "missing args"; exit; }
+
 clone=$1
 shift
-found=$(f $@)
+
+if [[ -z $1 ]];
+then
+    found=$(cat -)
+else
+    found=$(f $@)
+fi
+
 [[ -z $found ]] && { echo "nothing found"; exit; }
 count=$(echo "$found" | wc -l)
 if [[ $count -gt 1 ]]; 

@@ -13,14 +13,21 @@ Once it's installed, you can start using the `f` command from your working direc
 f controller post
 ```
 
-This will match any files that have the keywords "controller" and "post" in its path (case insensitive search).
+This will match any files that have the substrings "controller" and "post" in its path, in that order (case insensitive search).
+
+This means you can just provide short substrings:
+
+```
+f cont pos
+```
+
 
 ### Opening files
 
 The `o` command works just like `f` but will attempt to open the file using nano.
 
 ```
-o controller post
+o contr post
 ```
 
 If more than one match is returned, it will not open anything and instead just show a list of files like `f` does.
@@ -73,3 +80,8 @@ The example above finds a file with the "view layout" search criteria and create
 
 Similarly to `o`, it will not create the file if there are multiple matches, and it's up to you to adjust your search until exactly only one file is returned.
 
+There is a more intuitive syntax which combines the output of `f` with `c`:
+
+```
+f view layout | c layout2.html
+```
