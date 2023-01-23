@@ -1,3 +1,14 @@
 [[ -z $1 ]] && { echo "missing arg"; exit; }
-path=*$(echo $@ | tr ' ' '*')*
-find $PWD -type f -ipath $path | grep -viP '.swp$'
+
+query='*'
+exclude='.swp$'
+
+for word in "$@"; do
+    if [[ $word == -* ]]; then
+        exclude="$exclude|"$(echo $word | tr -d '-')
+    else
+        query=$query$word*
+    fi
+done;
+
+find $PWD -type f -ipath $query | grep -viP $exclude
