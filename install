@@ -1,0 +1,5 @@
+mv {f,o,r,c} /usr/local/bin/
+ln /usr/local/bin/f f
+ln /usr/local/bin/o o
+ln /usr/local/bin/r r
+ln /usr/local/bin/c c
