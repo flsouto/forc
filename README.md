@@ -21,6 +21,11 @@ This means you can just provide short substrings:
 f cont pos
 ```
 
+You can also exclude stuff using `-termToExclude`:
+```
+f cont pos -vendor
+```
+
 
 ### Opening files
 
